@@ -34,16 +34,6 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
-      },
-      "Convey.Types/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Convey.Types.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Convey.Types.dll": {}
-        }
       }
     }
   },
@@ -230,16 +220,11 @@
         "newtonsoft.json.12.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
-    },
-    "Convey.Types/1.0.0": {
-      "type": "project",
-      "path": "../../../Convey.Types/src/Convey.Types/Convey.Types.csproj",
-      "msbuildProject": "../../../Convey.Types/src/Convey.Types/Convey.Types.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Convey.Types >= 1.0.0",
+      "/Users/goorion/Repos/Convey/Convey.Types/src/Convey.Types/Convey.Types.csproj",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.1"
     ]
@@ -306,5 +291,16 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for '/Users/goorion/Repos/Convey/Convey.Types/src/Convey.Types/Convey.Types.csproj'. Inside Visual Studio, this may be because the project is unloaded or not part of current solution. Otherwise the project file may be invalid or missing targets required for restore.",
+      "libraryId": "/Users/goorion/Repos/Convey/Convey.Types/src/Convey.Types/Convey.Types.csproj",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }
