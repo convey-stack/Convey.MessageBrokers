@@ -6,8 +6,7 @@ namespace Convey.MessageBrokers
 {
     public interface IBusSubscriber
     {
-        IBusSubscriber SubscribeMessage<TMessage>(Func<IServiceProvider, TMessage, ICorrelationContext, Task> handle, 
-            string @namespace = null, string queueName = null, Func<TMessage, ConveyException, object> onError = null) 
-            where TMessage : class;
+        IBusSubscriber Subscribe<TMessage>(Func<IServiceProvider, TMessage, ICorrelationContext, Task> handle,
+            Func<TMessage, ConveyException, object> onError = null) where TMessage : class;
     }
 }
