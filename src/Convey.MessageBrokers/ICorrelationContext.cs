@@ -1,20 +1,9 @@
-﻿using System;
-
-namespace Convey.MessageBrokers
+﻿namespace Convey.MessageBrokers
 {
     public interface ICorrelationContext
     {
-        Guid Id { get; }
-        Guid UserId { get; }
-        Guid ResourceId { get; }
-        string TraceId { get; }
-        string SpanContext { get; }
-        string ConnectionId { get; }
-        string Name { get; }
-        string Origin { get; }
-        string Resource { get; }
-        string Culture { get; }
-        DateTime CreatedAt { get; }
+        string CorrelationId { get; set; }
+        string SpanContext { get; set; }
         int Retries { get; set; }
     }
 }

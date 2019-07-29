@@ -4,14 +4,15 @@ namespace Convey.MessageBrokers
 {
     public class CorrelationContextAccessor : ICorrelationContextAccessor
     {
-        private static AsyncLocal<CorrelationContextHolder> _correlationContextCurrent = new AsyncLocal<CorrelationContextHolder>();
+        private static readonly AsyncLocal<CorrelationContextHolder>
+            Holder = new AsyncLocal<CorrelationContextHolder>();
 
         public ICorrelationContext CorrelationContext
         {
-            get => _correlationContextCurrent.Value?.Context;
+            get => Holder.Value?.Context;
             set
             {
-                var holder = _correlationContextCurrent.Value;
+                var holder = Holder.Value;
                 if (holder != null)
                 {
                     holder.Context = null;
@@ -19,7 +20,7 @@ namespace Convey.MessageBrokers
 
                 if (value != null)
                 {
-                    _correlationContextCurrent.Value = new CorrelationContextHolder { Context = value };
+                    Holder.Value = new CorrelationContextHolder {Context = value};
                 }
             }
         }
