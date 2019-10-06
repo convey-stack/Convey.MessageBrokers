@@ -14,8 +14,9 @@ namespace Convey.MessageBrokers
         public bool AutoDeleteExchange { get; }
         public bool External { get; }
 
-        public MessageAttribute(string exchange, string routingKey, string queue, string exchangeType,
-            bool declareExchange, bool durableExchange, bool autoDeleteExchange, bool external)
+        public MessageAttribute(string exchange = null, string routingKey = null, string queue = null,
+            string exchangeType = null, bool declareExchange = false, bool durableExchange = false,
+            bool autoDeleteExchange = false, bool external = false)
         {
             Exchange = exchange;
             RoutingKey = routingKey;

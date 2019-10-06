@@ -7,7 +7,7 @@ namespace Convey.MessageBrokers
         private static readonly AsyncLocal<CorrelationContextHolder>
             Holder = new AsyncLocal<CorrelationContextHolder>();
 
-        public ICorrelationContext CorrelationContext
+        public object CorrelationContext
         {
             get => Holder.Value?.Context;
             set
@@ -27,7 +27,7 @@ namespace Convey.MessageBrokers
 
         private class CorrelationContextHolder
         {
-            public ICorrelationContext Context;
+            public object Context;
         }
     }
 }
